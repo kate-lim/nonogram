@@ -10,7 +10,6 @@
    :grid (array grid)
    }))
 
-
 (defn verify-solution
   [board]
   "Verify that the board is properly solved"
@@ -22,13 +21,16 @@
   false)
 
 
-(def test-unsolved (make-board [[0 1] []]
+(def test-unsolved (make-board
+            [[0 1] []]
             [[1 0] []]))
 
-(def test-solved (make-board [[0 1] []]
+(def test-solved (make-board
+            [[0 1] []]
             [[1 0] []]
-            [[2 1] [2 2]]))
+            [[2 1]
+             [2 2]]))
 
 (verify-solution test-unsolved)
-(verify-solution test-solbed)
+(verify-solution test-solved)
 
