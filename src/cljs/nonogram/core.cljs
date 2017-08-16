@@ -25,10 +25,15 @@
   "Create the solution to a board"
   false)
 
+(def test-unsolved (make-board
+            [[0 1] []]
+            [[1 0] []]))
 
-(def test-unsolved (make-board [[0 1] []] [[1 0] []]))
-
-(def test-solved (make-board [[0 1] []] [[1 0] []] (array (array 2 1) (array 2 2))))
+(def test-solved (make-board
+            [[0 1] []]
+            [[1 0] []]
+            [[2 1]
+             [2 2]]))
 
 (verify-solution test-unsolved)
 (verify-solution test-solved)
