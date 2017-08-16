@@ -7,14 +7,18 @@
   ([columns rows grid]
    {:columns columns
    :rows rows
-   :grid (array grid)
+   :grid grid
    }))
-
 
 (defn verify-solution
   [board]
   "Verify that the board is properly solved"
-  false)
+;;   (let [col ((board :columns) 0)
+;;         ]
+;;     col )
+;;   (board :rows)
+  (board :grid)
+)
 
 (defn solve-board
   [board]
@@ -22,13 +26,10 @@
   false)
 
 
-(def test-unsolved (make-board [[0 1] []]
-            [[1 0] []]))
+(def test-unsolved (make-board [[0 1] []] [[1 0] []]))
 
-(def test-solved (make-board [[0 1] []]
-            [[1 0] []]
-            [[2 1] [2 2]]))
+(def test-solved (make-board [[0 1] []] [[1 0] []] (array (array 2 1) (array 2 2))))
 
 (verify-solution test-unsolved)
-(verify-solution test-solbed)
+(verify-solution test-solved)
 
